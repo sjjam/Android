@@ -1,4 +1,6 @@
-package exam.day03.view.selectview;
+package exam.day03.view.selectview.view.activity;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -7,13 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import exam.day03.view.selectview.R;
 
-import java.util.ArrayList;
-
-public class CustomRowTestActivity extends AppCompatActivity {
-    //1. ListView에 출력할 데이터 - 커스텀row로 리스트뷰를 구성하는 경우 데이터를 ArrayList로 정의
-    ArrayList<String> datalist = new ArrayList<String>();
+public class ListViewTestActivity extends AppCompatActivity {
+    //1. ListView에 출력할 데이터
+    String[] datalist = {"java","oracle","HTML5","CSS","jacascript","servlet","jsp",
+            "spring","hadoop","flume","sqoop","hive","R","android"};
     ListView listview;
     TextView txt;
     @Override
@@ -22,18 +23,11 @@ public class CustomRowTestActivity extends AppCompatActivity {
         setContentView(R.layout.list_view_test);
         listview = findViewById(R.id.listview1);
         txt = findViewById(R.id.listTxt);
-        datalist.add("장동건");
-        datalist.add("이민호");
-        datalist.add("김어준");
-        datalist.add("주지훈");
-        datalist.add("김서연");
         /*
         리스트뷰에 출력할 데이터?
         어떤 디자인으로 출력? */
         //2. Adapter 객체를 선택해서 생성
-        //커스텀디자인을 row로 사용할 것이므로 어떤 뷰에 데이터를 연결할 것인지 설정
-        ArrayAdapter adapter = new ArrayAdapter(this,
-                R.layout.custrow, R.id.txtcust1, datalist);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,datalist);
 
         //3. ListView에서 어댑터가 작업할 수 있도록 ListView에 어댑터셋팅
         listview.setAdapter(adapter);
@@ -46,7 +40,7 @@ public class CustomRowTestActivity extends AppCompatActivity {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            txt.setText(datalist.get(position));
+            txt.setText(datalist[position]);
         }
     }
 }
