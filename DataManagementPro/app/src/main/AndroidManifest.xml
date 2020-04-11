@@ -17,12 +17,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".sqlite.exam.ReadActivity"></activity>
         <activity android:name=".filesystem.ExternalFileMgr"></activity>
         <activity android:name=".filesystem.InternalFileMgr" />
         <activity android:name=".permission.RuntimePermissionTest" />
         <activity android:name=".permission.BasicPermissionTest" />
         <activity android:name=".permission.UseCustomPermission" />
-        <activity android:name=".filesystem.examActivity">
+        <activity android:name=".sqlite.exam.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
