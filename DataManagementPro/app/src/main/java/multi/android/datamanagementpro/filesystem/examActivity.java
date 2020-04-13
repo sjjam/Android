@@ -53,18 +53,20 @@ public class examActivity extends AppCompatActivity {
         writedata = findViewById(R.id.editwrite);
         open = findViewById(R.id.open);
         save = findViewById(R.id.save);
+        textread = findViewById(R.id.textread);
 
         open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                write();
+                read();
+
             }
         });
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                read();
+                write();
             }
         });
     }
@@ -133,10 +135,10 @@ public class examActivity extends AppCompatActivity {
                     //int num = Integer.parseInt(br.readLine());
                     //br.close();
                     String line = "";
-                    line = br.readLine();
-                    //for (int i=1; i<num; i++){
+
+                    while ((line = br.readLine()) != null){
                         textread.append(line);
-                    //}
+                    }
                     br.close();
                 } catch (IOException e) {
                     e.printStackTrace();
