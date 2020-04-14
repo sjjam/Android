@@ -1,22 +1,21 @@
-package multi.android.support_lib.fragment.exam;
+package multi.android.support_lib.viewpager.exam;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import multi.android.support_lib.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class view3 extends Fragment {
+public class ViewFragment2 extends Fragment {
 
-    public view3() {
+    public ViewFragment2() {
         // Required empty public constructor
     }
 
@@ -26,6 +25,6 @@ public class view3 extends Fragment {
                              Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
         textView.setText(R.string.hello_blank_fragment);
-        return inflater.inflate(R.layout.view3, container, false);
+        return inflater.inflate(R.layout.view2, container, false);
     }
 }

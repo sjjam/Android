@@ -39,29 +39,34 @@
             android:tag="2"
             android:text="세번째뷰" />
     </LinearLayout>
-    <FrameLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/container">
-           <!-- 이 안에 프레그먼트를 정의하세요 -->
-           <!-- fragment 첫번째뷰 페이지를 연결
-                id : fragment
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/fragment_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/container">
+               <!-- 이 안에 프레그먼트를 정의하세요 -->
+               <!-- fragment 첫번째뷰 페이지를 연결
+                    id : fragment
 
-                ViewFragment1, ViewFragment2, ViewFragment3
-                버튼을 누를때마다 fragment의 영역이 변경되도록 구현
+                    ViewFragment1, ViewFragment2, ViewFragment3
+                    버튼을 누를때마다 fragment의 영역이 변경되도록 구현
 
-           -->
-        <!-- xml에 fragment를 추가하면 동적(코드)으로 제어가 어렵다. -->
-        <fragment
-            android:id="@+id/fragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:name="multi.android.support_lib.fragment.exam.ViewFragment1"
-            />
-     </FrameLayout>
-   
+               -->
+            <!-- xml에 fragment를 추가하면 동적(코드)으로 제어가 어렵다. -->
+            <fragment
+                android:id="@+id/fragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:name="multi.android.support_lib.fragment.exam.ViewFragment1"
+                />
+         </LinearLayout>
+    </androidx.viewpager.widget.ViewPager>
+
 
 
 </LinearLayout>
