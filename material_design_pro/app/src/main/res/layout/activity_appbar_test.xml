@@ -51,16 +51,35 @@
         <ListView
             android:id="@+id/mylistview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" >
+
+        </ListView>
     </androidx.core.widget.NestedScrollView>
 
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="#ECDCAE"
+        app:navigationIcon="@android:drawable/ic_input_add" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:backgroundTint="#67B2ED"
+        app:layout_anchor="@id/bottom_bar"
+        android:src="@android:drawable/ic_input_add" />
+
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#FF0000" />"
+        app:backgroundTint="#FF0000" />"-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
